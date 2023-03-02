@@ -122,3 +122,42 @@ Now update your current user with the correct public key and private key, using 
 
 ![PBL5_4](https://user-images.githubusercontent.com/122687798/222321048-5697c49c-cb76-421f-b321-8497aa6cb2fb.jpg)
 
+![PBL5_5](https://user-images.githubusercontent.com/122687798/222321845-6037c83c-a5a9-4967-9ae5-73ab1a77b81c.jpg)
+
+![PBL5_6](https://user-images.githubusercontent.com/122687798/222322813-ff9509ec-596f-4051-b32f-2a1d9632d3fa.jpg)
+
+![PBL5_7](https://user-images.githubusercontent.com/122687798/222323455-ec042c2d-624e-4953-94a9-d64c33acbe32.jpg)
+
+No we will proceed to Test a few of the users randomly, and ensure that the users are able to connect to the server using the private key and the public key.
+
+So lets assume am a developer, and i want to connect to my live Ubuntu Server 3.236.93.244(on the EC2 Instance), already, i would have been given a private key. Recall in our script(see below), we have copied the public key from Shell folder on the  Ubuntu server to .ssh of each user. The Public key would always recognize the private key associated to it. So once i have the correct private key, i will be able to connect.
+
+# We need to create and set public key for the users in the server
+        cp -R "/home/ubuntu/Shell/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
+        echo "Copyied the Public Key to New User Account on the server"
+        echo
+        echo
+
+        echo "USER CREATED"
+
+
+note we has to change the path of the id_rsa.pub file from  /root/onboard/  to  /home/ubuntu/Shell/  
+
+So i open a new terminal and below was done....
+
+![PBL5_8](https://user-images.githubusercontent.com/122687798/222326567-9999965f-7204-4b65-9e68-3beeb0675a7e.jpg)
+
+So i disconnected from Eze, and tried connecting to another user - Toby, i got below error message
+
+![PBL5_9](https://user-images.githubusercontent.com/122687798/222327192-088baa88-a836-424b-8dc2-043165d5a521.JPG)
+
+So to correct this, i had to Update the authorized_keys folder for Toby..see below.
+
+![PBL5_10](https://user-images.githubusercontent.com/122687798/222327677-1d2b8d89-604e-4860-ba07-5e2cac106394.JPG)
+
+Now i can successfully connect to Tovy for the as a developer from the 2nd window terminal
+
+![PBL5_11](https://user-images.githubusercontent.com/122687798/222327983-70891352-fb5c-4e31-bca6-0851602105b8.JPG)
+
+# CONGRATULATIONS Eze !
+
