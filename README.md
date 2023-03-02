@@ -132,7 +132,7 @@ No we will proceed to Test a few of the users randomly, and ensure that the user
 
 So lets assume am a developer, and i want to connect to my live Ubuntu Server 3.236.93.244(on the EC2 Instance), already, i would have been given a private key. Recall in our script(see below), we have copied the public key from Shell folder on the  Ubuntu server to .ssh of each user. The Public key would always recognize the private key associated to it. So once i have the correct private key, i will be able to connect.
 
-# We need to create and set public key for the users in the server
+#### We need to create and set public key for the users in the server
         cp -R "/home/ubuntu/Shell/id_rsa.pub" "/home/$user/.ssh/authorized_keys"
         echo "Copyied the Public Key to New User Account on the server"
         echo
